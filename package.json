@@ -1,0 +1,19 @@
+{
+  "name": "cs_angular_tutorial",
+  "version": "1.0.0",
+  "description": "it's a tutorial using the codeschool videos (campus.codeschool.com/courses/shaping-up-with-angularjs)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kyzen/cs_angular_tutorial"
+  },
+  "author": "Chris Mason",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.6.5",
+    "bootstrap": "3.3.7"
+  }
+}
