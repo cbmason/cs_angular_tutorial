@@ -2,8 +2,8 @@
 <html ng-app="store">
 
   <head>
-
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <!-- todo: use "static route" https://stackoverflow.com/questions/27464168/how-to-include-scripts-located-inside-the-node-modules-folder-->
+    <link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
   </head>
 
   <body ng-controller="StoreController as store">
@@ -12,12 +12,37 @@
         <h3>
           {{product.name}}
           <em class="pull-right">{{product.price | currency}}</em>
-          <img ng-src="{{product.images[0].thumb}}"/>
         </h3>
-        <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
-        <script type="text/javascript" src="app.js"></script>
+        <img align="center" ng-src="{{product.images[0].thumb}}"/>
+        <section ng-controller="PanelController as panel">
+          <ul class="nav nav-pills">
+            <li ng-class="{ active: panel.isSelected(1) }">  
+              <a href ng-click="panel.selectTab(1)">Description</a> 
+            </li>
+            <li ng-class="{ active: panel.isSelected(2) }">
+              <a href ng-click="panel.selectTab(2)">Specifications</a> 
+            </li>
+            <li ng-class="{ active: panel.isSelected(3) }">
+              <a href ng-click="panel.selectTab(3)">Reviews</a> 
+            </li>
+          </ul>
+          <div class="panel" ng-show="panel.isSelected(1)">
+            <h4>Description</h4>
+            <p>{{product.description}}</p>
+          </div>
+          <div class="panel" ng-show="panel.isSelected(2)">
+            <h4>Specifications</h4>
+            <blockquote>None yet</blockquote>
+          </div>
+          <div class="panel" ng-show="panel.isSelected(3)">
+            <h4>Reviews</h4>
+            <blockquote>None yet</blockquote>
+          </div>
+        </section>
       </li>
     </ul>
+    <script type="text/javascript" src="node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
   </body>
 </html>
 

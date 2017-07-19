@@ -4,6 +4,20 @@
         app.controller('StoreController', function(){
                 this.products = gems;
         });
+
+        app.controller('PanelController', function(){
+                this.tab = 1;
+
+                this.selectTab = function(setTab) {
+                        this.tab = setTab;
+                };
+
+                this.isSelected = function(checkTab){
+                        return this.tab === checkTab;
+                };
+
+        });
+
         var gems = [
         {
                 name: 'Dodecahedron',
@@ -22,7 +36,7 @@
 
         },
         {
-                name: "Penatagonal Gem",
+                name: "Pentagonal Gem",
                 price: 5.95,
                 description: "This is another gem that of course has no real value, but this one shares a shape name with a satanic symbol, which at least makes it more likely that the irradiated ghouls of the wastes will fear you for possessing it.",
                 images: [ 
