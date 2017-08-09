@@ -30,6 +30,7 @@
         app.controller("ReviewController", function(){
                 this.review = {};
                 this.addReview = function(product) {
+                        this.review.createdOn = Date.now();
                         product.reviews.push(this.review);
                         this.review = {};
                 };
@@ -51,12 +52,15 @@
                 {
                         stars: 5,
                         body: "I love useless rocks!",
-                        author: "joe@mama.com"
+                        author: "joe@mama.com",
+                        createdOn: "1502244623000"
+
                 },
                 {
                         stars: 1,
                         body: "This product sucks",
-                        author: "w33dl0rd69@dbag.com"
+                        author: "w33dl0rd69@dbag.com",
+                        createdOn: "1502244623000"
                 },
                 ]
 
