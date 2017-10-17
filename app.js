@@ -26,7 +26,6 @@
                 };
         });
 
-
         app.controller("ReviewController", function(){
                 this.review = {};
                 this.addReview = function(product) {
@@ -37,6 +36,12 @@
 
         });
 
+        app.directive('productTitle', function(){
+                return {
+                        restrict: 'E',
+                        templateUrl: 'product-title.html'
+                };
+        });
 
         var gems = [
         {
